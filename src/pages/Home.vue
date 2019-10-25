@@ -14,8 +14,10 @@ import CreatePicture from '../components/CreatePicture'
 export default {
   name: 'Home',
   components: {CreatePicture, PictureList},
-  create: function () {
-    console.log('AAAAA')
+  data: function () {
+    return {
+      username: "Hir"
+    }
   }
 }
 </script>
