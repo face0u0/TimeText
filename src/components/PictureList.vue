@@ -1,13 +1,43 @@
 <template>
   <div>
-    <select v-model="search">
-      <option v-bind:key="i" v-for="(l, i) in classtimelist" v-bind:value="i">
-        {{ l }}
-      </option>
-    </select>
-    <button v-on:click="getPictureList">GET</button>
-    <div v-bind:key="p['id']" v-for="p in pictureList">
-      <img :src="p['image_url']" />
+    <div class="row">
+      <div class="col-10 offset-1 col-md-6 offset-md-3">
+        <b-input-group>
+          <b-form-select v-model="search">
+            <option
+              v-bind:key="i"
+              v-for="(l, i) in classtimelist"
+              v-bind:value="i"
+            >
+              {{ l }}
+            </option>
+          </b-form-select>
+          <b-input-group-append>
+            <b-button v-on:click="getPictureList">GET</b-button>
+          </b-input-group-append>
+        </b-input-group>
+      </div>
+    </div>
+
+    <div class="row">
+      <div v-bind:key="p['id']" v-for="p in pictureList" class="col-12 col-sm-6 col-md-4">
+        <div class="h-100">
+          <a :href="p['image_url']">
+            <b-card
+              :img-src="p['image_url']"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 20rem;"
+              class="mt-2"
+            >
+              <b-card-text class="text-muted">
+                {{ p["body"] }}
+              </b-card-text>
+            </b-card>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -49,7 +79,7 @@ export default {
         .then(
           function(response) {
             this.pictureList = response.data;
-            console.log(this.pictureList)
+            console.log(this.pictureList);
           }.bind(this)
         )
         .catch(function(reason) {

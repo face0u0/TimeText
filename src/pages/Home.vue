@@ -1,8 +1,15 @@
 <template>
-  <div id="home">
+  <div id="home" class="container">
+    <b-navbar type="dark" variant="dark" fixed="top">
+      <b-navbar-nav>
+        <b-nav-item href="/">Home</b-nav-item>
+      </b-navbar-nav>
+      <create-picture></create-picture>
+    </b-navbar>
+
     <div>
       <picture-list></picture-list>
-      <create-picture></create-picture>
+<!--      <create-picture></create-picture>-->
     </div>
   </div>
 </template>

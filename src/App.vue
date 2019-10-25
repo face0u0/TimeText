@@ -1,20 +1,23 @@
 <template>
   <div id="app">
-<!--    <img src="./assets/logo.png">-->
-<!--    <router-link to="/">Home</router-link>-->
-    <router-view/>
+  <!--    <img src="./assets/logo.png">-->
+    <!--    <router-link to="/">Home</router-link>-->
+    <router-view />
   </div>
 </template>
 
 <script>
+import CreatePicture from './components/CreatePicture'
+import Header from './components/Header'
 export default {
-  name: 'App'
-}
+  name: "App",
+  components: {Header, CreatePicture}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

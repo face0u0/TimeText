@@ -1,12 +1,29 @@
 <template>
   <div>
-    <div>
+    <b-button v-b-modal.modal-1 variant="info">Add Picture</b-button>
+    <b-modal id="modal-1" title="Add new Image">
       <form>
-        <input v-model="createRequest['image_url']" type="text" placeholder="image_url" />
-        <input v-model="createRequest['body']" type="text" placeholder="body" />
-        <button type="submit" v-on:click="sendData">submit</button>
+        <input
+          class="form-control mt-2"
+          v-model="createRequest['image_url']"
+          type="text"
+          placeholder="image_url"
+        />
+        <input
+          class="form-control mt-2"
+          v-model="createRequest['body']"
+          type="text"
+          placeholder="body"
+        />
+        <button
+          class="btn btn-primary mt-2"
+          type="submit"
+          v-on:click="sendData"
+        >
+          submit
+        </button>
       </form>
-    </div>
+    </b-modal>
   </div>
 </template>
 
@@ -27,24 +44,22 @@ export default {
   },
   methods: {
     sendData: function() {
-      this.createRequest['class_time'] = Math.round( (new Date()).getTime() / 1000 )
-      console.log(parseInt(new Date()))
+      this.createRequest["class_time"] = Math.round(
+        new Date().getTime() / 1000
+      );
+      console.log(parseInt(new Date()));
       axios
         .post(
           "https://util-api-face.herokuapp.com/clspict/class_contents?user_name=" +
             this.username,
           this.createRequest
         )
-        .then(
-          function(response) {
-            console.log(response);
-          }
-        )
-        .catch(
-          function(reason) {
-            console.log(reason);
-          }
-        );
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(reason) {
+          console.log(reason);
+        });
     }
   }
 };
