@@ -1,7 +1,6 @@
 <template>
   <div id="home">
     <div>
-      <h2>Vue.jsではじめるSPA</h2>
       <picture-list></picture-list>
       <create-picture></create-picture>
     </div>

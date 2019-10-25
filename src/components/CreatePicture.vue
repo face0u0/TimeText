@@ -27,7 +27,8 @@ export default {
   },
   methods: {
     sendData: function() {
-      this.createRequest['class_time'] = new Date()
+      this.createRequest['class_time'] = Math.round( (new Date()).getTime() / 1000 )
+      console.log(parseInt(new Date()))
       axios
         .post(
           "https://util-api-face.herokuapp.com/clspict/class_contents?user_name=" +
