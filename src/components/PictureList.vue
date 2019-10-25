@@ -3,7 +3,7 @@
     <button v-on:click="getPictureList">GET</button>
     <div v-bind:key="p['id']" v-for="p in pictureList">
       <img :src="p['image_url']" />
-      <p>{{p}}</p>
+<!--      <p>{{p}}</p>-->
     </div>
   </div>
 </template>
@@ -21,7 +21,6 @@
   },
   methods: {
     getPictureList: function() {
-      // console.log(this);
       axios
         .get(
           "https://util-api-face.herokuapp.com/clspict/me/all?user_name=" +
@@ -29,7 +28,7 @@
         )
         .then(function(response) {
           this.pictureList = response.data;
-          console.log(response.data)
+          // console.log(this.pictureList[0])
         }.bind(this))
         .catch(function(reason) {
           console.log(reason);
