@@ -1,11 +1,7 @@
 <template>
   <div>
     <select v-model="search">
-      <option
-        v-bind:key="i"
-        v-for="(l, i) in classtimelist"
-        v-bind:value="i"
-      >
+      <option v-bind:key="i" v-for="(l, i) in classtimelist" v-bind:value="i">
         {{ l }}
       </option>
     </select>
@@ -45,13 +41,15 @@ export default {
     getPictureList: function() {
       axios
         .get(
-          "https://util-api-face.herokuapp.com/clspict/me/all?user_name=" +
-            this.username + "&search=" + this.search
+          "https://util-api-face.herokuapp.com/clspict/me/part/" +
+            this.search +
+            "?user_name=" +
+            this.username
         )
         .then(
           function(response) {
             this.pictureList = response.data;
-            // console.log(this.pictureList[0])
+            console.log(this.pictureList)
           }.bind(this)
         )
         .catch(function(reason) {
