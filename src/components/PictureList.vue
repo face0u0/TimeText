@@ -41,6 +41,9 @@
               <b-card-text class="text-muted">
                 {{ p["body"] }}
               </b-card-text>
+              <b-card-text class="text-muted h6">
+                <small class="webfont">{{ p["ymd"] }}</small>
+              </b-card-text>
             </b-card>
           </a>
         </div>
@@ -101,3 +104,9 @@ export default {
   }
 };
 </script>
+
+<style>
+  a:hover{
+    text-decoration: none;
+  }
+</style>
