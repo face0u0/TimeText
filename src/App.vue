@@ -8,10 +8,10 @@
 
 <script>
 import CreatePicture from './components/CreatePicture'
-import Header from './components/Header'
+import DarkHeader from './components/DarkHeader'
 export default {
   name: "App",
-  components: {Header, CreatePicture}
+  components: {DarkHeader, CreatePicture}
 };
 </script>
 

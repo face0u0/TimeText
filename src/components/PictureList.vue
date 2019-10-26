@@ -22,7 +22,7 @@
     <div class="row">
       <div v-bind:key="p['id']" v-for="p in pictureList" class="col-12 col-sm-6 col-md-4">
         <div class="h-100">
-          <a :href="p['image_url']">
+          <a :href="p['image_url']" target="_blank">
             <b-card
               :img-src="p['image_url']"
               img-alt="Image"
@@ -46,11 +46,11 @@
 import axios from "axios";
 
 export default {
+  props: ['username'],
   name: "PictureList",
   data: function() {
     return {
       pictureList: null,
-      username: "Hir",
       search: 0
     };
   },

@@ -1,15 +1,9 @@
 <template>
   <div id="home" class="container">
-    <b-navbar type="dark" variant="dark" fixed="top">
-      <b-navbar-nav>
-        <b-nav-item href="/">Home</b-nav-item>
-      </b-navbar-nav>
-      <create-picture></create-picture>
-    </b-navbar>
-
+  <dark-header
+  v-on:name="username=$event"></dark-header>
     <div>
-      <picture-list></picture-list>
-<!--      <create-picture></create-picture>-->
+      <picture-list v-bind:username="username"></picture-list>
     </div>
   </div>
 </template>
@@ -17,12 +11,13 @@
 <script>
 import PictureList from '../components/PictureList'
 import CreatePicture from '../components/CreatePicture'
+import DarkHeader from '../components/DarkHeader'
 export default {
   name: 'Home',
-  components: {CreatePicture, PictureList},
+  components: {DarkHeader, CreatePicture, PictureList},
   data: function () {
     return {
-      username: "Hir"
+      username: ""
     }
   }
 }

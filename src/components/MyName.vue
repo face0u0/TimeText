@@ -1,7 +1,15 @@
 <template>
   <div>
-    <button v-on:click="$emit('name', username)"></button>
-    <input v-model="username" />
+<!--    <b-button v-b-modal.modal-2 variant="info">Set Username</b-button>-->
+    <b-modal id="modal-2" title="Username" :hide-footer="true" :visible="status" >
+      <form>
+        <input class="form-control mt-2" v-model="username" />
+        <button
+          v-on:click="setname(username)"
+          class="btn btn-primary mt-2"
+        >Submit</button>
+      </form>
+    </b-modal>
   </div>
 </template>
 
@@ -10,22 +18,13 @@ export default {
   data: function() {
     return {
       username: "",
-      classdata: null
+      status: true
     };
   },
   methods: {
-    pushname: function() {
-      this.$axios
-        .get(
-          "https://util-api-face.herokuapp.com/me/all?user_name=" +
-            this.username
-        )
-        .then(function(response) {
-          this.classdata = response.data;
-        })
-        .catch(function(reason) {
-          console.log(reason.data);
-        });
+    setname:function (event) {
+      this.$emit('name', event);
+      this.status = false;
     }
   }
 };
