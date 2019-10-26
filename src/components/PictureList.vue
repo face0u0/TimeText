@@ -8,6 +8,7 @@
               v-bind:key="i"
               v-for="(l, i) in classtimelist"
               v-bind:value="i"
+              class="webfont"
             >
               {{ l }}
             </option>

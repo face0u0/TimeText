@@ -31,10 +31,10 @@
 import axios from "axios";
 
 export default {
+  props: ['username'],
   name: "CreatePicture",
   data: function() {
     return {
-      username: "Hir",
       createRequest: {
         image_url: "",
         body: "",
