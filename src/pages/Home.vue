@@ -2,10 +2,10 @@
   <div id="home" class="container">
     <my-name v-on:name="username=$event"></my-name>
     <dark-header></dark-header>
+    <create-picture v-bind:username="username" class="my-3 offset-8 offset-sm-11"></create-picture>
     <div>
       <picture-list v-bind:username="username"></picture-list>
     </div>
-    <create-picture v-bind:username="username" class="mt-5 offset-6 offset-sm-11"></create-picture>
   </div>
 
 </template>
@@ -24,6 +24,7 @@ export default {
     }
   }
 }
+// d45fcc7ee858cf5
 </script>
 
 <style>
