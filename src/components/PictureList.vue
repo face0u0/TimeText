@@ -28,21 +28,22 @@
 
     <div class="row">
       <div v-bind:key="p['id']" v-for="p in pictureList" class="col-6 col-md-4">
-        <div class="h-100">
-          <a :href="p['image_url']" target="_blank">
+        <div class="h-100  ">
+          <a :href="p['image_url']" target="_blank" >
             <b-card
               :img-src="p['image_url']"
               img-alt="Image"
               img-top
               tag="article"
               style="max-width: 20rem;"
-              class="mt-2"
+              class="mt-2 border-right-0 border-top-0"
+              body-tag="span"
             >
               <b-card-text class="text-muted">
-                {{ p["body"] }}
+                <span class="webfont">{{ getText(p["ymd"].toString()) }}</span>
               </b-card-text>
-              <b-card-text class="text-muted h6">
-                <small class="webfont">{{ p["ymd"] }}</small>
+              <b-card-text class="text-muted">
+                <small>{{ p["body"] }}</small>
               </b-card-text>
             </b-card>
           </a>
@@ -79,6 +80,9 @@ export default {
     }
   },
   methods: {
+    getText: function(p){
+      return p.slice(-4)
+    },
     getPictureList: function() {
       let url;
       if (this.checked){
