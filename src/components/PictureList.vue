@@ -3,6 +3,12 @@
     <div class="row">
       <div class="col-8 offset-sm-1 col-md-6 offset-md-2 offset-lg-1">
         <b-input-group>
+          <b-input-group-prepend is-text>
+            <b-form-checkbox switch size="sm" class="mr-n2 info" v-model="checked">
+              <span class="sr-only">around</span>
+            </b-form-checkbox>
+          </b-input-group-prepend>
+
           <b-form-select v-model="search">
             <option
               v-bind:key="i"
@@ -52,7 +58,8 @@ export default {
   data: function() {
     return {
       pictureList: null,
-      search: 0
+      search: 0,
+      checked: false,
     };
   },
   computed: {
@@ -70,12 +77,16 @@ export default {
   },
   methods: {
     getPictureList: function() {
+      let url;
+      if (this.checked){
+        url = "/me/around/"+this.search+"?user_name="+this.username;
+      }
+      else {
+        url = "/me/part/"+this.search+"?user_name="+this.username
+      }
       axios
         .get(
-          "https://util-api-face.herokuapp.com/clspict/me/part/" +
-            this.search +
-            "?user_name=" +
-            this.username
+          "https://util-api-face.herokuapp.com/clspict" + url
         )
         .then(
           function(response) {
@@ -84,7 +95,7 @@ export default {
           }.bind(this)
         )
         .catch(function(reason) {
-          console.log(reason);
+          console.log(reason.response);
         });
     }
   }
