@@ -14,7 +14,9 @@
 </template>
 
 <script>
-export default {
+  import axios from "axios";
+
+  export default {
   data: function() {
     return {
       username: "",
@@ -25,7 +27,15 @@ export default {
     setname:function (event) {
       this.$emit('name', event);
       this.status = false;
-    }
+
+      axios.get('https://util-api-face.herokuapp.com/clspict/me/all?user_name='+event)
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (reason) {
+          console.log(reason)
+          this.status = true
+        }.bind(this))}
   }
 };
 </script>
