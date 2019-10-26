@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button v-b-modal.modal-1 variant="outline-info" class="position-absolute">Picture</b-button>
+    <b-button v-b-modal.modal-1 variant="warning" class="position-absolute">Picture</b-button>
     <b-modal id="modal-1" title="Add new Image" :hide-footer="true">
       <form>
         <input
