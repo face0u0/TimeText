@@ -110,7 +110,7 @@ export default {
 </script>
 
 <style>
-  a:hover{
+  a:hover, a:active{
     text-decoration: none;
   }
 </style>
