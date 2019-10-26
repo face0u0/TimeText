@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-button v-b-modal.modal-1 variant="info">Add Picture</b-button>
-    <b-modal id="modal-1" title="Add new Image" :hide-footer="true" :visible="status">
+    <b-button v-b-modal.modal-1 variant="outline-info" class="position-absolute">Picture</b-button>
+    <b-modal id="modal-1" title="Add new Image" :hide-footer="true">
       <form>
         <input
           accept="image/*"
@@ -53,11 +53,10 @@ export default {
       this.image_file = e.target.files[0]
     },
     sendData: function() {
-      this.status = true
       if (this.createRequest["block"] || !this.image_file) {
         return;
       }
-      this.status = false
+      this.$root.$emit('bv::hide::modal', 'modal-1', '#btnShow')
       this.createRequest["block"] = true;
       this.imgurData = new FormData();
       this.imgurData.append("image", this.image_file);

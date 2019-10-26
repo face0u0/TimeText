@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-10 offset-1 col-md-6 offset-md-3">
+      <div class="col-8 offset-sm-1 col-md-6 offset-md-2 offset-lg-1">
         <b-input-group>
           <b-form-select v-model="search">
             <option
@@ -21,7 +21,7 @@
     </div>
 
     <div class="row">
-      <div v-bind:key="p['id']" v-for="p in pictureList" class="col-12 col-sm-6 col-md-4">
+      <div v-bind:key="p['id']" v-for="p in pictureList" class="col-6 col-md-4">
         <div class="h-100">
           <a :href="p['image_url']" target="_blank">
             <b-card
@@ -60,9 +60,9 @@ export default {
       const classlist = [];
       for (let i = 0; i < 25; i++) {
         classlist.push(
-          ["月", "火", "水", "木", "金"][Math.floor(i / 5)] +
+          ["Mon", "Tus", "Wed", "Thu", "Fri"][Math.floor(i / 5)] +
             ((i % 5) + 1) +
-            "限"
+            ""
         );
       }
       return classlist;

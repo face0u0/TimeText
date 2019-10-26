@@ -2,7 +2,7 @@
   <div id="home" class="container">
     <my-name v-on:name="username=$event"></my-name>
     <dark-header></dark-header>
-    <create-picture v-bind:username="username" class="my-3 offset-8 offset-sm-11"></create-picture>
+    <create-picture v-bind:username="username" class="my-3 offset-5 offset-sm-9 offset-md-10 offset-lg-11"></create-picture>
     <div>
       <picture-list v-bind:username="username"></picture-list>
     </div>
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style>
-  .webfont, .btn, .modal-title{
+  .webfont, .btn, .modal-title, input, select{
     font-family: 'Satisfy', cursive;
   }
 

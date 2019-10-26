@@ -1,7 +1,7 @@
 <template>
   <div>
 <!--    <b-button v-b-modal.modal-2 variant="info">Set Username</b-button>-->
-    <b-modal id="modal-2" title="Username" :hide-footer="true" :visible="status">
+    <b-modal id="modal-2" title="Username" :hide-footer="true" :visible="status" v-on:hidden="setname(username)">
       <form>
         <input class="form-control mt-2" v-model="username" />
         <button
