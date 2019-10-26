@@ -79,7 +79,7 @@ export default {
         )
         .then(
           function(response) {
-            this.pictureList = response.data;
+            this.pictureList = response.data.reverse();
             console.log(this.pictureList);
           }.bind(this)
         )
