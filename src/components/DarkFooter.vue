@@ -1,7 +1,8 @@
 <template>
   <div class="section footer-classic context-dark bg-image wrapper" style="background: #2d3246;">
     <div class="">
-      <div class="row row-30 pt-4 text-muted">
+      <div class="container-fluid">
+      <div class="pt-4 row text-muted">
         <div class="col-md-4 col-xl-5">
           <div class="pr-xl-4">
             <p class="rights webfont h3">TimeText</p>
@@ -17,6 +18,7 @@
           <router-link to="/about" right class="text-muted webfont">About</router-link>
         </div>
     </div>
+      </div>
     <div class="row no-gutters social-container">
       <div class="col"><a class="social-inner" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftimetext.netlify.com%2F&amp;src=sdkpreparse"><span class="icon mdi mdi-facebook"></span><span class="text-muted">Facebook</span></a></div>
 <!--      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>-->
