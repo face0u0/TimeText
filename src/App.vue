@@ -28,10 +28,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-</style>
-
-<style>
-  .webfont, .btn, .modal-title, input, select{
+ .webfont, .btn, .modal-title, input, select{
     font-family: 'Satisfy', cursive;
   }
 
