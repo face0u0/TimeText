@@ -103,6 +103,7 @@ export default {
     },
     getPictureList: function() {
       this.loading = true
+      this.pictureList = []
       let url;
       if (this.checked){
         url = "/me/around/"+this.search+"?user_name="+this.username;
