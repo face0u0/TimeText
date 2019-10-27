@@ -26,9 +26,3 @@ export default {
 // d45fcc7ee858cf5
 </script>
 
-<style>
-  .webfont, .btn, .modal-title, input, select{
-    font-family: 'Satisfy', cursive;
-  }
-
-</style>

@@ -18,7 +18,7 @@
           class="form-control mt-2"
           v-model="createRequest['body']"
           type="text"
-          placeholder="body"
+          placeholder="comment"
         />
         <div class="text-right">
           <button

@@ -3,7 +3,7 @@
     <b-navbar type="dark" variant="dark" fixed="top">
       <b-navbar-brand href="/" class="webfont">TimeText</b-navbar-brand>
       <b-navbar-nav class="ml-auto">
-            <router-link to="/about" right class="text-muted">About</router-link>
+            <router-link to="/about" right class="text-muted webfont">About</router-link>
 <!--        <b-nav-item href="/about" right>About</b-nav-item>-->
       </b-navbar-nav>
     </b-navbar>
