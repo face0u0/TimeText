@@ -18,10 +18,10 @@
         </div>
     </div>
     <div class="row no-gutters social-container">
-      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
-      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
-      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
-      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+      <div class="col"><a class="social-inner" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftimetext.netlify.com%2F&amp;src=sdkpreparse"><span class="icon mdi mdi-facebook"></span><span class="text-muted">Facebook</span></a></div>
+<!--      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>-->
+      <div class="col"><a class="social-inner" href="https://twitter.com/share?ref_src=twsrc%5Etfw"><span class="icon mdi mdi-twitter"></span><span class="text-muted">twitter</span></a></div>
+<!--      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>-->
     </div>
   </div>
   </div>
