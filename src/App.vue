@@ -4,15 +4,18 @@
     <!--    <img src="./assets/logo.png">-->
     <!--    <router-link to="/">Home</router-link>-->
     <router-view />
+  <dark-footer></dark-footer>
   </div>
 </template>
 
 <script>
 import CreatePicture from './components/CreatePicture'
 import DarkHeader from './components/DarkHeader'
+import DarkFooter from './components/DarkFooter'
+
 export default {
   name: "App",
-  components: {DarkHeader, CreatePicture}
+  components: {DarkHeader, CreatePicture, DarkFooter}
 };
 </script>
 
@@ -30,5 +33,11 @@ export default {
 <style>
   .webfont, .btn, .modal-title, input, select{
     font-family: 'Satisfy', cursive;
+  }
+
+  #app{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 </style>

@@ -32,7 +32,7 @@
           また、このサイトでは画像アップロードサービスimgurを用いています。
         </p>
       </div>
-      <div class="col-12 py-3 border-top my-2">
+      <div class="col-12 py-5 border-top mt-3">
         <h1 class="mb-4 h4 text-muted d-block webfont">Hou to Use?</h1>
         <p class="text-center">
          まずはユーザー登録を済ませましょう！ポップアップで名前を入力し、Createボタンを押すとユーザーを作成できます。
