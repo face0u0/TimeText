@@ -27,7 +27,8 @@
     </div>
 
     <div class="row">
-      <h3 v-show="!pictureList[0]" class="webfont text-muted col-12 no-content">no content</h3>
+      <h3 v-if="loading" class="webfont text-muted col-12 no-content">Loading...</h3>
+      <h3 v-else-if="!pictureList[0]" class="webfont text-muted col-12 no-content">no content</h3>
       <div v-bind:key="p['id']" v-for="p in pictureList" class="col-6 col-md-4">
         <div class="h-100">
           <a :href="p['image_url']" target="_blank" >
