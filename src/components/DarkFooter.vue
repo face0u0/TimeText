@@ -5,7 +5,7 @@
       <div class="pt-4 row text-muted">
         <div class="col-md-4 col-xl-5">
           <div class="pr-xl-4">
-            <p class="rights webfont h3">TimeText</p>
+            <router-link to="/" right class="rights text-muted webfont h3">TimeText</router-link>
           </div>
         </div>
         <div class="col-md-4">
@@ -14,7 +14,7 @@
 <!--          </dl>-->
           <p class="webfont">created by face9363</p>
         </div>
-        <div class="col-md-4 col-xl-3">
+        <div class="col-md-4 col-xl-3 mb-1">
           <router-link to="/about" right class="text-muted webfont">About</router-link>
         </div>
     </div>
