@@ -25,7 +25,7 @@
         </p>
       </div>
       <div class="col-12 col-md-4">
-        <h1 class="mt-2 h5 text-muted d-block webfont">Location</h1>
+        <h1 class="mt-2 h5 text-muted d-block webfont">Location And Image</h1>
         <p class="text-center">
           位置情報は写真の場所をタグ付けするのにのみ用います。位置情報を用いなくても写真の分類機能はご利用になれますが、
           同じ場所で授業を受ける人の写真が見えなくなる可能性があります。（又は、精度が著しく落ちます。）
