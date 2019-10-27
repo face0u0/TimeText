@@ -2,9 +2,9 @@
   <div class="section footer-classic context-dark bg-image wrapper" style="background: #2d3246;">
     <div class="">
       <div class="container-fluid">
-      <div class="pt-4 row text-muted">
+      <div class="pt-3 row text-muted">
         <div class="col-md-4 col-xl-5">
-          <div class="pr-xl-4">
+          <div class="pr-xl-4 pb-1">
             <router-link to="/" right class="rights text-muted webfont h3">TimeText</router-link>
           </div>
         </div>

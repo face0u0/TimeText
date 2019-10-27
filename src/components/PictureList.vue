@@ -4,7 +4,7 @@
       <div class="col-8 offset-sm-1 col-md-6 offset-md-2 offset-lg-1">
         <b-input-group>
           <b-input-group-prepend is-text>
-            <b-form-checkbox switch size="sm" class="mr-n2 info" v-model="checked">
+            <b-form-checkbox switch size="sm" class="mr-n2" v-model="checked">
               <span class="sr-only">around</span>
             </b-form-checkbox>
           </b-input-group-prepend>
@@ -20,7 +20,7 @@
             </option>
           </b-form-select>
           <b-input-group-append>
-            <b-button v-on:click="getPictureList">GET</b-button>
+            <b-button v-on:click="getPictureList" variant="outline-secondary">GET</b-button>
           </b-input-group-append>
         </b-input-group>
       </div>
@@ -36,7 +36,7 @@
               img-top
               tag="article"
               style="max-width: 20rem;"
-              class="mt-2 border-right-0 border-top-0"
+              class="my-1 border-0 shadow"
               body-tag="span"
             >
               <b-card-text class="text-muted">

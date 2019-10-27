@@ -2,17 +2,19 @@
   <div id="about" class="container">
     <div class="row">
       <div class="col-12 col-md-8 offset-md-2 my-5 border-bottom">
-        <h1 class="mb-4 h4 text-muted d-block webfont">What is TimeText?</h1>
+        <h1 class="mb-4 h3 text-muted d-block webfont">What is TimeText?</h1>
         <p class="text-center">
-          このサイトは授業の板書をアップロードできるサービスです。板書の写真を整理するのが面倒で困っていませんか？
-          授業に行けなくて板書がほしいと思うことはありませんか？授業で一部、板書を撮り忘れたなんてことはありませんか？
+          板書の写真を整理するのが面倒で困っていませんか？
+          授業に行けなくて板書がほしいと思うことはありませんか？
+          授業で一部、板書し忘れたなんてことはありませんか？
           <span class="webfont">TimeText</span> ならこれらすべてを解決できます！
+          以下にある<span class="webfont">TimeText</span> の機能を見てみましょう！
         </p>
       </div>
       <div class="col-12 col-md-4">
         <h1 class="mt-2 h5 text-muted d-block webfont">Classify Picture</h1>
         <p class="text-center">
-          黒板の写真を取ってこのサイトでアップロードするだけ！写真をとった時間に合わせて自動的に授業ごとに写真を分類します。
+          黒板の写真を取ってこのサイトでアップロードするだけ！写真をアップロードした時間に合わせて自動的に授業ごとに写真を分類します。
         </p>
       </div>
       <div class="col-12 col-md-4">
@@ -35,7 +37,7 @@
       <div class="col-12 py-5 border-top mt-3">
         <h1 class="mb-4 h4 text-muted d-block webfont">Hou to Use?</h1>
         <p class="text-center">
-         まずはユーザー登録を済ませましょう！ポップアップで名前を入力し、Createボタンを押すとユーザーを作成できます。
+         まずはユーザー登録を済ませましょう！ポップアップにて名前を入力し、Createボタンを押すとユーザーを作成できます。
           そしてPictureボタンから写真をアップできます。（基本的に授業開始時刻から休み時間の終わりまでを周期として分類します。）
           コメントをつけることもできます。また、自分の上げた写真はホーム画面で時限を選択し、GETボタンを押すことで取得できます。
           時限選択欄の左のトグルをオンにすると他人の写真を含めて検索できます。

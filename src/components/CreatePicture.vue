@@ -22,7 +22,7 @@
         />
         <div class="text-right">
           <button
-            class="btn btn-outline-warning mt-2"
+            class="btn btn-warning mt-2"
             type="submit"
             v-on:click="getLocation"
           >
