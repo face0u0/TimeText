@@ -27,6 +27,7 @@
     </div>
 
     <div class="row">
+      <h3 v-show="!pictureList[0]" class="webfont text-muted col-12 no-content">no content</h3>
       <div v-bind:key="p['id']" v-for="p in pictureList" class="col-6 col-md-4">
         <div class="h-100">
           <a :href="p['image_url']" target="_blank" >
@@ -64,11 +65,23 @@ export default {
   name: "PictureList",
   data: function() {
     return {
-      pictureList: null,
+      pictureList: [],
       search: 0,
       checked: false,
       loading: false
     };
+  },
+  mounted: function () {
+    const l = localStorage.getItem('search');
+    if (l) {
+      this.search = l;
+      setTimeout(this.getPictureList, 1000);
+    }
+  },
+  watch: {
+    search: function () {
+        localStorage.setItem('search', this.search);
+    }
   },
   computed: {
     classtimelist: function() {
@@ -81,7 +94,7 @@ export default {
         );
       }
       return classlist;
-    }
+    },
   },
   methods: {
     getText: function(p){
@@ -120,5 +133,9 @@ export default {
 <style>
   a:hover, a:active{
     text-decoration: none;
+  }
+
+  .no-content{
+    margin-top: 20vh;
   }
 </style>
