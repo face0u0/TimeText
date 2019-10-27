@@ -1,8 +1,10 @@
 <template>
   <div>
     <b-navbar type="dark" variant="dark" fixed="top">
-      <b-navbar-nav>
-        <b-nav-item href="/" class="webfont">TimeText</b-nav-item>
+      <b-navbar-brand href="/" class="webfont">TimeText</b-navbar-brand>
+      <b-navbar-nav class="ml-auto">
+            <router-link to="/about" right class="text-muted">About</router-link>
+<!--        <b-nav-item href="/about" right>About</b-nav-item>-->
       </b-navbar-nav>
     </b-navbar>
   </div>
@@ -10,11 +12,10 @@
 
 <script>
 import CreatePicture from "../components/CreatePicture";
-import MyName from "../components/MyName";
 
 export default {
   name: "DarkHeader",
-  components: { CreatePicture, MyName },
+  components: { CreatePicture },
   data: function () {
     return {
       username: ""

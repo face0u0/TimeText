@@ -50,6 +50,9 @@
         </div>
       </div>
     </div>
+    <div class="text-center" v-show="loading">
+      <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
+    </div>
   </div>
 </template>
 
@@ -64,6 +67,7 @@ export default {
       pictureList: null,
       search: 0,
       checked: false,
+      loading: false
     };
   },
   computed: {
@@ -84,6 +88,7 @@ export default {
       return p.slice(-4)
     },
     getPictureList: function() {
+      this.loading = true
       let url;
       if (this.checked){
         url = "/me/around/"+this.search+"?user_name="+this.username;
@@ -103,7 +108,10 @@ export default {
         )
         .catch(function(reason) {
           console.log(reason.response);
-        });
+        })
+        .finally(function () {
+           this.loading = false
+      }.bind(this));
     }
   }
 };

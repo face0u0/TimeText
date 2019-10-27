@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-  <!--    <img src="./assets/logo.png">-->
+    <dark-header></dark-header>
+    <!--    <img src="./assets/logo.png">-->
     <!--    <router-link to="/">Home</router-link>-->
     <router-view />
   </div>

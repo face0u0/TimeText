@@ -5,27 +5,30 @@
     >
     <b-modal id="modal-1" title="Add new Image" :hide-footer="true">
       <form>
-        <input
-          accept="image/*"
-          multiple
-          type="file"
-          className="input"
-          id="upload-img"
-          v-on:change="setFile($event)"
-        />
+        <b-form-group label-for="file-small"  label-size="sm">
+          <b-form-file
+            id="file-small"
+            accept="image/*"
+            type="file"
+            size="sm"
+            v-on:change="setFile($event)"
+          ></b-form-file>
+        </b-form-group>
         <input
           class="form-control mt-2"
           v-model="createRequest['body']"
           type="text"
           placeholder="body"
         />
-        <button
-          class="btn btn-primary mt-2"
-          type="submit"
-          v-on:click="getLocation"
-        >
-          submit
-        </button>
+        <div class="text-right">
+          <button
+            class="btn btn-outline-warning mt-2"
+            type="submit"
+            v-on:click="getLocation"
+          >
+            submit
+          </button>
+        </div>
       </form>
     </b-modal>
   </div>
