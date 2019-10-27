@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-8 offset-sm-1 col-md-6 offset-md-2 offset-lg-1">
+      <div class="col-8 offset-sm-1 col-md-6 offset-md-2 offset-lg-1 mb-3">
         <b-input-group>
           <b-input-group-prepend is-text>
             <b-form-checkbox switch size="sm" class="mr-n2" v-model="checked">
@@ -28,7 +28,7 @@
 
     <div class="row">
       <div v-bind:key="p['id']" v-for="p in pictureList" class="col-6 col-md-4">
-        <div class="h-100  ">
+        <div class="h-100">
           <a :href="p['image_url']" target="_blank" >
             <b-card
               :img-src="p['image_url']"
@@ -36,7 +36,7 @@
               img-top
               tag="article"
               style="max-width: 20rem;"
-              class="my-1 border-0 shadow"
+              class="mb-3 border-0 shadow"
               body-tag="span"
             >
               <b-card-text class="text-muted">
