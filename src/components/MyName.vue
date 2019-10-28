@@ -5,7 +5,7 @@
       id="modal-2"
       title="Sign-in / Log-in"
       :hide-footer="true"
-      v-on:hidden="setname(username)"
+      v-on:hidden="confirmname"
     >
       <form>
 <!--        <input class="form-control mt-2" v-model="username" />-->
@@ -66,6 +66,9 @@ export default {
             this.setname(event);
           }.bind(this)
         );
+    },
+    confirmname: function(event){
+      setTimeout(this.setname, 2000, this.username)
     },
     setname: function(event) {
       this.$emit("name", event);
