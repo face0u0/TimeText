@@ -3,18 +3,18 @@
     <!--    <b-button v-b-modal.modal-2 variant="info">Set Username</b-button>-->
     <b-modal
       id="modal-2"
-      title="Username"
+      title="Sign-in / Log-in"
       :hide-footer="true"
       v-on:hidden="setname(username)"
     >
       <form>
-        <input class="form-control mt-2" v-model="username" />
-        <button v-on:click="createname(username)" class="btn btn-warning mt-2">
-          Create
+<!--        <input class="form-control mt-2" v-model="username" />-->
+        <button v-on:click="signUp" class="btn btn-warning mt-2">
+          Google
         </button>
-        <button v-on:click="setname(username)" class="btn btn-primary mt-2">
-          Submit
-        </button>
+<!--        <button v-on:click="setname(username)" class="btn btn-primary mt-2">-->
+<!--          Submit-->
+<!--        </button>-->
       </form>
     </b-modal>
   </div>
@@ -22,6 +22,8 @@
 
 <script>
 import axios from "axios";
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
 export default {
   data: function() {
@@ -38,6 +40,15 @@ export default {
     }
   },
   methods: {
+    signUp: function () {
+      var provider = new firebase.auth.GoogleAuthProvider()
+      firebase.auth().signInWithPopup(provider)
+        .then(obj => {
+          this.username = obj.user.uid
+          this.createname(obj.user.uid)
+        })
+        .catch(error => alert(error.message))
+    },
     createname: function(event) {
       this.$root.$emit("bv::hide::modal", "modal-2", "#btnShow");
       axios
@@ -50,8 +61,9 @@ export default {
         )
         .catch(
           function(reason) {
-            console.log(reason);
+            console.log(reason.response);
             this.$root.$emit("bv::show::modal", "modal-2", "#btnShow");
+            this.setname(event);
           }.bind(this)
         );
     },
