@@ -9,7 +9,7 @@
     >
       <form>
 <!--        <input class="form-control mt-2" v-model="username" />-->
-        <button v-on:click="signUp" class="btn btn-warning mt-2">
+        <button v-on:click="signUp()" class="btn btn-warning mt-2">
           Google
         </button>
 <!--        <button v-on:click="setname(username)" class="btn btn-primary mt-2">-->
@@ -45,18 +45,21 @@ export default {
       firebase.auth().signInWithPopup(provider)
         .then(obj => {
           this.username = obj.user.uid;
-          this.createname(this.username)
+          this.createname(this.username);
         })
-        .catch(error => alert(error.message))
+        .catch(error =>
+            console.log(error.message)
+        )
     },
     createname: function(event) {
-      this.$root.$emit("bv::hide::modal", "modal-2", "#btnShow");
       axios
         .post("https://util-api-face.herokuapp.com/users", { name: event })
         .then(
           function(response) {
-            localStorage.name = event;
-            this.$emit("name", event);
+              console.log(response);
+              this.$root.$emit("bv::hide::modal", "modal-2", "#btnShow");
+              localStorage.name = event;
+              this.$emit("name", event)
           }.bind(this)
         )
         .catch(

@@ -76,7 +76,9 @@ export default {
     const l = localStorage.getItem('search');
     if (l) {
       this.search = l;
-      setTimeout(this.getPictureList, 1000);
+      if(localStorage.name) {
+        setTimeout(this.getPictureList, 1000);
+      }
     }
   },
   watch: {
