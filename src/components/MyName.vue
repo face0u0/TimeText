@@ -34,18 +34,18 @@ export default {
   mounted: function() {
     if (localStorage.name) {
       this.username = localStorage.name;
-      this.setname(this.username);
+      this.createname(this.username);
     } else {
       this.$root.$emit("bv::show::modal", "modal-2", "#btnShow");
     }
   },
   methods: {
     signUp: function () {
-      var provider = new firebase.auth.GoogleAuthProvider()
+      var provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithPopup(provider)
         .then(obj => {
-          this.username = obj.user.uid
-          this.createname(obj.user.uid)
+          this.username = obj.user.uid;
+          this.createname(this.username)
         })
         .catch(error => alert(error.message))
     },
@@ -63,32 +63,12 @@ export default {
           function(reason) {
             console.log(reason.response);
             this.$root.$emit("bv::show::modal", "modal-2", "#btnShow");
-            this.setname(event);
           }.bind(this)
         );
     },
     confirmname: function(event){
-      setTimeout(this.setname, 2000, this.username)
+      setTimeout(this.createname, 2000, this.username)
     },
-    setname: function(event) {
-      this.$emit("name", event);
-      this.$root.$emit("bv::hide::modal", "modal-2", "#btnShow");
-      axios
-        .get(
-          "https://util-api-face.herokuapp.com/clspict/me/all?user_name=" +
-            event
-        )
-        .then(function(response) {
-          localStorage.name = event;
-          console.log(response);
-        })
-        .catch(
-          function(reason) {
-            console.log(reason);
-            this.$root.$emit("bv::show::modal", "modal-2", "#btnShow");
-          }.bind(this)
-        );
-    }
   }
 };
 </script>
