@@ -4,12 +4,14 @@
             <div class="col-8 offset-sm-1 col-md-6 offset-md-2 offset-lg-1 mb-3">
                 <b-input-group>
                     <b-input-group-prepend is-text>
-                        <b-form-checkbox switch size="sm" class="mr-n2" v-model="checked">
+                        <b-form-checkbox switch size="sm" class="mr-n2"
+                                         v-on:change="setChecked($event)">
                             <span class="sr-only">around</span>
                         </b-form-checkbox>
                     </b-input-group-prepend>
 
-                    <b-form-select v-model="search">
+                    <b-form-select
+                            v-model="search">
                         <option
                         v-bind:key="i"
                         v-for="(l, i) in classtimelist"
@@ -19,9 +21,6 @@
                             {{ l }}
                         </option>
                     </b-form-select>
-                    <b-input-group-append>
-                        <b-button v-on:click="getPictureList" variant="outline-secondary">GET</b-button>
-                    </b-input-group-append>
                 </b-input-group>
             </div>
         </div>
@@ -51,14 +50,12 @@
             const l = localStorage.getItem('search');
             if (l) {
                 this.search = l;
-                if(localStorage.name) {
-                    setTimeout(this.getPictureList, 1000);
-                }
             }
         },
         watch: {
             search: function () {
                 localStorage.setItem('search', this.search);
+                this.getPictureList();
             }
         },
         computed: {
@@ -75,18 +72,27 @@
             },
         },
         methods: {
+            setChecked: function (checked){
+                this.checked = (checked);
+                this.getPictureList();
+            },
+            setSearch: function (value) {
+                this.search = value;
+                this.getPictureList();
+            },
             getText: function(p){
                 return p.slice(-4)
             },
             getPictureList: function() {
                 this.loading = true;
                 this.pictureList = [];
+                this.$emit('picturelist', this.pictureList);
                 let url;
                 if (this.checked){
                     url = "/me/around/"+this.search+"?user_name="+this.username;
                 }
                 else {
-                    url = "/me/part/"+this.search+"?user_name="+this.username
+                    url = "/me/part/"+this.search+"?user_name="+this.username;
                 }
                 axios
                     .get(
