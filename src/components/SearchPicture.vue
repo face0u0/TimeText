@@ -46,13 +46,7 @@
                 loading: false
             };
         },
-        mounted: function () {
-            const l = localStorage.getItem('search');
-            if (l) {
-                setTimeout(function () {
-                    this.search = l
-                }.bind(this), 800);
-            }
+        created: function () {
             this.searchByOther();
         },
         watch: {

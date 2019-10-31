@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!--    <b-button v-b-modal.modal-2 variant="info">Set Username</b-button>-->
     <b-modal
       id="modal-2"
       title="Sign-in / Log-in"
@@ -8,13 +7,9 @@
       v-on:hidden="confirmname"
     >
       <form>
-<!--        <input class="form-control mt-2" v-model="username" />-->
         <button v-on:click="signUp()" class="btn btn-warning mt-2">
           Google
         </button>
-<!--        <button v-on:click="setname(username)" class="btn btn-primary mt-2">-->
-<!--          Submit-->
-<!--        </button>-->
       </form>
     </b-modal>
   </div>

@@ -28,9 +28,14 @@ export default {
   components: {DarkHeader, CreatePicture, PictureList, MyName, SearchPicture},
   data: function () {
     return {
-      newdata: null,
       picturelistbysearch: [],
       username: "",
+    }
+  },
+  mounted: function () {
+    const l = localStorage.getItem('search');
+    if (l) {
+      this.search(l)
     }
   },
   methods: {
