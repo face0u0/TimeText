@@ -5,24 +5,24 @@
       <div class="pt-3 row text-muted">
         <div class="col-md-4 col-xl-5">
           <div class="pr-xl-4 pb-1">
-            <router-link to="/" right class="rights text-muted webfont h3">TimeText</router-link>
+            <router-link to="/" right class="rights text-muted logo h3">TimeText</router-link>
           </div>
         </div>
         <div class="col-md-4">
 <!--          <dl class="contact-list">-->
 <!--            <dd><a href="mailto:#">dkstudioin@gmail.com</a></dd>-->
 <!--          </dl>-->
-          <p class="webfont">created by face9363</p>
+          <p class="logo">created by face9363</p>
         </div>
         <div class="col-md-4 col-xl-3 mb-1">
-          <router-link to="/about" right class="text-muted webfont">About</router-link>
+          <router-link to="/about" right class="text-muted logo">About</router-link>
         </div>
     </div>
       </div>
     <div class="row no-gutters social-container">
-      <div class="col"><a class="social-inner" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftimetext.netlify.com%2F&amp;src=sdkpreparse"><span class="icon mdi mdi-facebook"></span><span class="text-muted">Facebook</span></a></div>
+      <div class="col"><a class="social-inner" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftimetext.netlify.com%2F&amp;src=sdkpreparse"><span class="icon mdi mdi-facebook"></span><span class="text-muted">Share with Facebook</span></a></div>
 <!--      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>-->
-      <div class="col"><a class="social-inner" href="https://twitter.com/share?ref_src=twsrc%5Etfw"><span class="icon mdi mdi-twitter"></span><span class="text-muted">twitter</span></a></div>
+      <div class="col"><a class="social-inner" href="https://twitter.com/share?ref_src=twsrc%5Etfw"><span class="icon mdi mdi-twitter"></span><span class="text-muted">Share with twitter</span></a></div>
 <!--      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>-->
     </div>
   </div>

@@ -16,9 +16,9 @@
               <b-card-text class="text-muted">
                 <span class="webfont">{{ getText(p["ymd"].toString()) }}</span>
               </b-card-text>
-              <b-card-text class="text-muted">
-                <small>{{ p["body"] }}</small>
-              </b-card-text>
+<!--              <b-card-text class="text-muted">-->
+<!--                <small>{{ p["body"] }}</small>-->
+<!--              </b-card-text>-->
             </b-card>
           </a>
         </div>

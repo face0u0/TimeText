@@ -28,9 +28,17 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
- .webfont, .btn, .modal-title, input, select{
-    font-family: 'Satisfy', cursive;
+.logo {
+  font-family: 'Saira Condensed', sans-serif;
+
+}
+ .webfont, .btn, .modal-title, input, option{
+   font-family: 'Saira Condensed', sans-serif;
   }
+
+ .japan-fonts{
+   font-family: 'M PLUS 1p', sans-serif;
+ }
 
   #app{
     display: flex;

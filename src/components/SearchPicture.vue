@@ -80,7 +80,6 @@
             },
             setSearch: function (value) {
                 this.search = value;
-                console.log("########");
                 this.getPictureList();
             },
             getText: function(p){

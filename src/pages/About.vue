@@ -1,16 +1,16 @@
 <template>
   <div id="about" class="container">
-    <div class="row">
+    <div class="row japan-fonts">
       <div class="col-12 col-md-8 offset-md-2 my-5 border-bottom">
-        <h1 class="mb-4 h3 text-muted d-block webfont">What is TimeText?</h1>
+        <h1 class="mb-4 h3 text-muted d-block webfont">What is <span class="logo">TimeText</span>?</h1>
         <p class="text-center">
-          <span class="webfont">TimeText</span> は板書管理サービスです。板書管理サービスと聞いて、なんだそれだけかと思うかもしれませんが、
+          <span class="logo">TimeText</span>は板書管理サービスです。板書管理サービスと聞いて、なんだそれだけかと思うかもしれませんが、
           興味深い機能を備えているサービスでもあり、様々な問題を解決できる可能性があります。例えば、<br/>
           板書の写真を整理するのが面倒で困っていませんか？ <br/>
           授業に行けなくて板書がほしいと思うことはありませんか？ <br/>
           授業で一部、板書し忘れたなんてことはありませんか？ <br/>
-          <span class="webfont">TimeText</span> ならこれらすべてを解決できます！
-          以下で<span class="webfont">TimeText</span> の機能を見てみましょう！
+          <span class="logo">TimeText</span>ならこれらすべてを解決できます！
+          以下で<span class="logo">TimeText</span>の機能を見てみましょう！
         </p>
       </div>
       <div class="col-12 col-md-4">
