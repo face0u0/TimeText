@@ -4,7 +4,7 @@
     <create-picture
             v-bind:username="username"
             v-on:search="search($event)"
-            class="my-3 offset-7 offset-sm-9 offset-md-10 offset-lg-11"></create-picture>
+            ></create-picture>
     <div>
       <search-picture v-on:picturelist="picturelistbysearch=$event"
                       v-bind:username="username"
