@@ -1,6 +1,6 @@
 <template>
   <div id="home" class="container">
-    <my-name v-on:name="username=$event"></my-name>
+    <my-name v-on:name="morning($event)"></my-name>
     <create-picture
             v-bind:username="username"
             v-on:search="search($event)"
@@ -33,14 +33,18 @@ export default {
     }
   },
   mounted: function () {
-    const l = localStorage.getItem('search');
-    if (l) {
-      this.search(l)
-    }
+
   },
   methods: {
-    search: function (id) {
-      this.$refs.searchr.$emit('searchbyother', id)
+    search: function (id, name) {
+      this.$refs.searchr.$emit('searchbyother', id, name)
+    },
+    morning: function (name) {
+      this.username = name;
+      const l = localStorage.getItem('search');
+      if (l) {
+        this.search(l, name)
+      }
     }
   },
 }

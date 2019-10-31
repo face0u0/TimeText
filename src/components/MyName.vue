@@ -26,7 +26,7 @@ export default {
       username: ""
     };
   },
-  mounted: function() {
+  created: function() {
     if (localStorage.name) {
       this.username = localStorage.name;
       this.createname(this.username);

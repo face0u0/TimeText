@@ -11,7 +11,8 @@
                     </b-input-group-prepend>
 
                     <b-form-select
-                            v-model="search">
+                            v-on:change="setSearch($event)"
+                    v-bind:value="search">
                         <option
                         v-bind:key="i"
                         v-for="(l, i) in classtimelist"
@@ -25,7 +26,7 @@
             </div>
         </div>
         <h3 v-if="loading" class="webfont text-muted col-12 no-content">Loading...</h3>
-        <h3 v-else-if="!pictureList[0]" class="webfont text-muted col-12 no-content">no content</h3>
+        <h3 v-else-if="!pictureList[0]" class="webfont text-muted col-12 no-content">__no content__</h3>
         <div class="text-center" v-show="loading">
             <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
         </div>
@@ -49,12 +50,6 @@
         created: function () {
             this.searchByOther();
         },
-        watch: {
-            search: function () {
-                localStorage.setItem('search', this.search);
-                this.getPictureList();
-            }
-        },
         computed: {
             classtimelist: function() {
                 const classlist = [];
@@ -70,31 +65,38 @@
         },
         methods: {
             searchByOther: function () {
-                this.$on('searchbyother', function (value) {
-                    this.setSearch(value)
+                this.$on('searchbyother', function (value, name) {
+                    this.setSearch(value, name);
                 })
             },
             setChecked: function (checked){
                 this.checked = (checked);
                 this.getPictureList();
             },
-            setSearch: function (value) {
+            setSearch: function (value, name) {
+                localStorage.setItem('search', value);
                 this.search = value;
-                this.getPictureList();
+                this.getPictureList(name);
             },
             getText: function(p){
                 return p.slice(-4)
             },
-            getPictureList: function() {
+            getPictureList: function(name) {
                 this.loading = true;
                 this.pictureList = [];
                 this.$emit('picturelist', this.pictureList);
-                let url;
-                if (this.checked){
-                    url = "/me/around/"+this.search+"?user_name="+this.username;
+                let url, username;
+                if(name !== undefined){
+                    username = name;
                 }
                 else {
-                    url = "/me/part/"+this.search+"?user_name="+this.username;
+                    username = this.username;
+                }
+                if (this.checked){
+                    url = "/me/around/"+this.search+"?user_name="+username;
+                }
+                else {
+                    url = "/me/part/"+this.search+"?user_name="+username;
                 }
                 axios
                     .get(
