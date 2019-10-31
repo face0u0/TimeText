@@ -1,36 +1,19 @@
 <template>
   <div>
-    <b-button v-b-modal.modal-1 variant="warning" class="position-absolute"
-      >Picture</b-button
-    >
-    <b-modal id="modal-1" title="Add new Image" :hide-footer="true">
-      <form>
-        <b-form-group label-for="file-small"  label-size="sm">
-          <b-form-file
-            id="file-small"
-            accept="image/*"
-            type="file"
-            size="sm"
-            v-on:change="setFile($event)"
-          ></b-form-file>
-        </b-form-group>
-        <input
-          class="form-control mt-2"
-          v-model="createRequest['body']"
-          type="text"
-          placeholder="comment"
-        />
-        <div class="text-right">
-          <button
-            class="btn btn-warning mt-2"
-            type="submit"
-            v-on:click="getLocation"
-          >
-            submit
-          </button>
-        </div>
-      </form>
-    </b-modal>
+<!--    <b-button v-b-modal.modal-1 variant="warning" -->
+<!--      >Picture</b-button-->
+<!--    >-->
+    <label class="position-absolute">
+      <span class="btn btn-warning">
+        <input v-on:change="setFile($event)"
+         id="file-small"
+         accept="image/*"
+         type="file"
+         style="display:none"
+         capture="environment"/>
+        Picture
+      </span>
+    </label>
   </div>
 </template>
 
@@ -58,6 +41,7 @@ export default {
   methods: {
     setFile: function(e) {
       this.image_file = e.target.files[0];
+      this.getLocation();
     },
     getLocation: function() {
       if (!navigator.geolocation) {
