@@ -1,11 +1,14 @@
 <template>
   <div id="home" class="container">
     <my-name v-on:name="username=$event"></my-name>
-    <create-picture v-bind:username="username" class="my-3 offset-7 offset-sm-9 offset-md-10 offset-lg-11"></create-picture>
+    <create-picture
+            v-on:newdata="newdata=$event"
+            v-bind:username="username"
+            class="my-3 offset-7 offset-sm-9 offset-md-10 offset-lg-11"></create-picture>
     <div>
-      <search-picture v-on:picturelist="picturelist=$event"
+      <search-picture v-on:picturelist="picturelistbysearch=$event"
                       v-bind:username="username"></search-picture>
-      <picture-list v-bind:picturelist="picturelist"></picture-list>
+      <picture-list v-bind:picturelist="picturelistbysearch"></picture-list>
     </div>
   </div>
 
@@ -23,8 +26,18 @@ export default {
   components: {DarkHeader, CreatePicture, PictureList, MyName, SearchPicture},
   data: function () {
     return {
-      picturelist: [],
+      newdata: null,
+      picturelistbysearch: [],
       username: ""
+    }
+  },
+  computed: {
+    picturelist: function () {
+      let newlist = this.picturelistbysearch;
+      if(this.newdata == null){
+        newlist.unshift(this.newdata);
+      }
+      return newlist;
     }
   }
 }

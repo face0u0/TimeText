@@ -49,7 +49,9 @@
         mounted: function () {
             const l = localStorage.getItem('search');
             if (l) {
-                this.search = l;
+                setTimeout(function () {
+                    this.search = l
+                }.bind(this), 1000);
             }
         },
         watch: {
