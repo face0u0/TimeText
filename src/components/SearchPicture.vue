@@ -51,8 +51,9 @@
             if (l) {
                 setTimeout(function () {
                     this.search = l
-                }.bind(this), 1000);
+                }.bind(this), 800);
             }
+            this.searchByOther();
         },
         watch: {
             search: function () {
@@ -74,12 +75,18 @@
             },
         },
         methods: {
+            searchByOther: function () {
+                this.$on('searchbyother', function (value) {
+                    this.setSearch(value)
+                })
+            },
             setChecked: function (checked){
                 this.checked = (checked);
                 this.getPictureList();
             },
             setSearch: function (value) {
                 this.search = value;
+                console.log("########");
                 this.getPictureList();
             },
             getText: function(p){

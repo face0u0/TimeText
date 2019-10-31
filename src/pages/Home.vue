@@ -2,12 +2,14 @@
   <div id="home" class="container">
     <my-name v-on:name="username=$event"></my-name>
     <create-picture
-            v-on:newdata="newdata=$event"
             v-bind:username="username"
+            v-on:search="search($event)"
             class="my-3 offset-7 offset-sm-9 offset-md-10 offset-lg-11"></create-picture>
     <div>
       <search-picture v-on:picturelist="picturelistbysearch=$event"
-                      v-bind:username="username"></search-picture>
+                      v-bind:username="username"
+                      ref="searchr"
+      ></search-picture>
       <picture-list v-bind:picturelist="picturelistbysearch"></picture-list>
     </div>
   </div>
@@ -28,18 +30,14 @@ export default {
     return {
       newdata: null,
       picturelistbysearch: [],
-      username: ""
+      username: "",
     }
   },
-  computed: {
-    picturelist: function () {
-      let newlist = this.picturelistbysearch;
-      if(this.newdata == null){
-        newlist.unshift(this.newdata);
-      }
-      return newlist;
+  methods: {
+    search: function (id) {
+      this.$refs.searchr.$emit('searchbyother', id)
     }
-  }
+  },
 }
 // d45fcc7ee858cf5
 </script>

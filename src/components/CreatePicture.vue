@@ -1,8 +1,5 @@
 <template>
   <div>
-<!--    <b-button v-b-modal.modal-1 variant="warning" -->
-<!--      >Picture</b-button-->
-<!--    >-->
     <label class="position-absolute">
       <span class="btn btn-warning">
         <input v-on:change="setFile($event)"
@@ -62,6 +59,7 @@ export default {
       if (!this.image_file) {
         return;
       }
+      console.log("########");
       this.$root.$emit("bv::hide::modal", "modal-1", "#btnShow");
       this.imgurData = new FormData();
       this.imgurData.append("image", this.image_file);
@@ -79,6 +77,7 @@ export default {
         .then(
           function(res) {
             this.createRequest["image_url"] = res.data.data.link;
+            console.log(res);
             this.createRequest["class_time"] = Math.round(
               new Date().getTime() / 1000
             );
@@ -91,6 +90,7 @@ export default {
               .then(
                 function(response) {
                   console.log(response);
+                  this.$emit('search', response.data['class_time']);
                   this.createRequest = {
                     image_url: "",
                     body: "",
