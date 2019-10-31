@@ -6,7 +6,11 @@
       :hide-footer="true"
       v-on:hidden="confirmname"
     >
-      <form>
+      <div class="text-center" v-if="loading">
+        <h5 class="text-muted">Please Wait! soon you can logged in...</h5>
+        <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
+      </div>
+      <form v-else>
         <button v-on:click="signUp()" class="btn btn-warning mt-2">
           Google
         </button>
@@ -23,10 +27,11 @@ import 'firebase/auth'
 export default {
   data: function() {
     return {
-      username: ""
+      username: "",
+      loading: false
     };
   },
-  created: function() {
+  mounted: function() {
     if (localStorage.name) {
       this.username = localStorage.name;
       this.createname(this.username);
@@ -37,14 +42,16 @@ export default {
   methods: {
     signUp: function () {
       var provider = new firebase.auth.GoogleAuthProvider();
+      this.loading = true;
       firebase.auth().signInWithPopup(provider)
         .then(obj => {
           this.username = obj.user.uid;
           this.createname(this.username);
         })
-        .catch(error =>
-            console.log(error.message)
-        )
+        .catch(error => {
+          console.log(error.message);
+          this.loading = false;
+        })
     },
     createname: function(event) {
       axios
@@ -62,7 +69,9 @@ export default {
             console.log(reason.response);
             this.$root.$emit("bv::show::modal", "modal-2", "#btnShow");
           }.bind(this)
-        );
+        ).finally(function () {
+           this.loading = false;
+        }.bind(this));
     },
     confirmname: function(event){
       setTimeout(this.createname, 2000, this.username)
