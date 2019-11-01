@@ -125,7 +125,7 @@
 
 <style>
   .jumbotron {
-    background-image: url("https://image.freepik.com/free-photo/_34805-10.jpg");
+    background-image: url("/static/image/blackboard.jpg");
     background-size: cover;
     background-position: center 60%;
     /*padding-bottom:40rem;*/
