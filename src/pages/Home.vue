@@ -1,15 +1,16 @@
 <template>
-  <div id="home" class="container">
+  <div id="home">
     <my-name v-on:name="morning($event)"></my-name>
-    <create-picture
-            v-bind:username="username"
-            v-on:search="search($event)"
-            ></create-picture>
-    <div>
-      <search-picture v-on:picturelist="picturelistbysearch=$event"
-                      v-bind:username="username"
-                      ref="searchr"
-      ></search-picture>
+
+        <search-picture v-on:picturelist="picturelistbysearch=$event"
+                        v-bind:username="username"
+                        ref="searchr"
+        ></search-picture>
+    <div class="container">
+      <create-picture
+        v-bind:username="username"
+        v-on:search="search($event)"
+      ></create-picture>
       <picture-list v-bind:picturelist="picturelistbysearch"></picture-list>
     </div>
   </div>

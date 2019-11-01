@@ -42,7 +42,10 @@ export default {
 
   #app{
     display: flex;
+    margin-top: 0;
     flex-direction: column;
     min-height: 100vh;
   }
+
+
 </style>

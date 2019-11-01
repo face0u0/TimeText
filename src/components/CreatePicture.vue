@@ -1,26 +1,26 @@
 <template>
     <div>
-      <div class="my-3 offset-7 offset-sm-9 offset-md-10 offset-lg-11">
+      <div id="gray" v-show="loading">
+        <h3 v-if="loading" class="webfont text-black col-12 no-content">Uploading...</h3>
+        <div class="text-center">
+          <b-spinner variant="black" label="Spinning" class="m-5"></b-spinner>
+        </div>
+      </div>
+
+<!--      <div class="my-3 offset-7 offset-sm-9 offset-md-10 offset-lg-11">-->
         <label class="position-absolute">
-          <span class="btn btn-warning">
+          <span class="fixed btn btn-lg btn-secondary rounded-circle pt-1 pl-2" style="width: 2.4rem; height: 2.5rem">
             <input v-on:change="setFile($event)"
              id="file-small"
              accept="image/*"
              type="file"
              style="display:none"
              capture="environment"/>
-            Picture
+            ＋
           </span>
         </label>
       </div>
-
-        <div id="gray" v-show="loading">
-            <h3 v-if="loading" class="webfont text-black col-12 no-content">Uploading...</h3>
-            <div class="text-center">
-                <b-spinner variant="black" label="Spinning" class="m-5"></b-spinner>
-            </div>
-        </div>
-    </div>
+<!--    </div>-->
 </template>
 
 <script>
@@ -139,4 +139,10 @@ export default {
         z-index:			1;
     }
 
+  .fixed{
+    position: fixed;
+    bottom: 10vw;
+    right: 10vw;
+    z-index: 10;
+  }
 </style>
