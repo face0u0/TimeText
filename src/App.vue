@@ -3,6 +3,7 @@
     <dark-header></dark-header>
     <!--    <img src="./assets/logo.png">-->
     <!--    <router-link to="/">Home</router-link>-->
+    <div class="mb-5"></div>
     <router-view />
   <dark-footer></dark-footer>
   </div>
