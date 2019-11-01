@@ -3,7 +3,7 @@
         <div class="row">
             <div v-bind:key="p['id']" v-for="p in picturelist" class="col-6 col-md-4 mb-3">
                 <div class="h-100" :key="p['image_url']">
-                    <a :href="p['image_url']" target="_blank">
+                    <a :href="encode(p['image_url'])" target="_blank">
                         <div class="card text-black-50 border-0 shadow">
                             <img class="card-img-top card-image-lazy"
                                  data-src="https://placehold.jp/150x150.png"
@@ -35,6 +35,9 @@
                 const url = str.split('.');
                 const ext = url.pop();
                 return url.join('.') + type + "." + ext;
+            },
+            encode: function (url) {
+                return "/static/image/index.html?url="+ encodeURIComponent(url);
             }
         }
     }

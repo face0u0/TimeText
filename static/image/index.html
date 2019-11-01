@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>TimeText</title>
+    <meta name="theme-color" content="#343a40">
+</head>
+<body style="background-color: #2d3246">
+    <img id="img_top" src="" style="width: 100%;">
+    <script>
+        const query = decodeURIComponent(window.location.search.slice(1).split('=').pop());
+        document.getElementById("img_top").setAttribute("src", query)
+    </script>
+</body>
+</html>
