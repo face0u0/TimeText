@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="row">
-            <div v-bind:key="p['id']" v-for="p in picturelist" class="col-6 col-md-4 mb-3">
+            <div v-bind:key="p['id']" v-for="p in picturelist" class="col-6 col-md-4 col-lg-3 mb-3">
                 <div class="h-100" :key="p['image_url']">
                     <a :href="encode(p['image_url'])" target="_blank">
                         <div class="card text-black-50 border-0 shadow">

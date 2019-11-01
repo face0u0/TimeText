@@ -7,7 +7,7 @@
       v-on:hidden="confirmname"
     >
       <div class="text-center" v-if="loading">
-        <h5 class="text-muted">Please Wait! soon you can logged in...</h5>
+        <h5 class="text-muted">ログイン中です...</h5>
         <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
       </div>
       <form v-else>
