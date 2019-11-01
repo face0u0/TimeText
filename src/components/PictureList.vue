@@ -37,7 +37,7 @@
                 return url.join('.') + type + "." + ext;
             },
             encode: function (url) {
-                return "/static/image/index.html?url="+ encodeURIComponent(url);
+                return "/static/image/?url="+ encodeURIComponent(url);
             }
         }
     }
