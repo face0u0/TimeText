@@ -2,7 +2,7 @@
     <div>
         <div class="row">
             <div class="col-8 offset-sm-1 col-md-6 offset-md-2 offset-lg-1 mb-3">
-                <b-input-group>
+                <b-input-group class="">
                     <b-input-group-prepend is-text>
                         <b-form-checkbox switch size="sm" class="mr-n2"
                                          v-on:change="setChecked($event)">
@@ -55,7 +55,7 @@
                 const classlist = [];
                 for (let i = 0; i < 25; i++) {
                     classlist.push(
-                        ["Mon", "Tus", "Wed", "Thu", "Fri"][Math.floor(i / 5)] +
+                        ["Mon", "Tue", "Wed", "Thu", "Fri"][Math.floor(i / 5)] +
                         ((i % 5) + 1) +
                         ""
                     );
@@ -119,3 +119,7 @@
         }
     };
 </script>
+
+<style>
+
+</style>

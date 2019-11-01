@@ -2,13 +2,22 @@ $warning: rgba(255, 255, 34, 0.5);
 $border-radius: 0;
 $card-inner-border-radius: 0;
 $primary: #66f8ff;
-$custom-gray: #ced4da;
+$custom-gray: #707b81;//#ced4da;
 $input-group-addon-bg: #fff;
 //$gray-200: $custom-gray;
-//$gray-400: $custom-gray;
+$gray-400: $custom-gray;
 //$gray-300: $custom-gray;
-//$gray-500: $custom-gray;
+$gray-500: $custom-gray;
 $secondary: $custom-gray;
-//$box-shadow:  0 .5rem .7rem rgba(black, .20);
-
+$box-shadow:  0 1px 1px rgba(black, .50);
+//$custom-control-indicator-active-color: $warning;
+//$custom-control-indicator-active-bg: $warning;
+//$custom-control-indicator-active-border-color: $warning;
+//$custom-control-indicator-checked-color: $warning;
+//$custom-control-indicator-disabled-bg: $warning;
+//$custom-control-indicator-checked-border-color: $warning;
+//$custom-control-indicator-bg: $warning;
+//$custom-control-indicator-border-color: $warning;
+//$custom-control-indicator-checked-disabled-bg: $warning;
+//$custom-select-color: $warning
 @import "~bootstrap/scss/bootstrap";
