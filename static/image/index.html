@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>TimeText</title>
     <meta name="theme-color" content="#343a40">
+    <style>
+        #img_top{
+            width: 100vw;
+        }
+        body{
+            background-color: #343a40;
+            /*text-align: center;*/
+        }
+    </style>
 </head>
-<body style="background-color: #000">
-    <img id="img_top" style="width: 100%; margin: 0 auto;">
+<body>
+    <img id="img_top">
     <script>
         const query = decodeURIComponent(window.location.search.slice(1).split('=').pop());
         document.getElementById("img_top").setAttribute("src", query)
