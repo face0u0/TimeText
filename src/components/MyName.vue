@@ -10,11 +10,17 @@
         <h5 class="text-muted">ログイン中です...</h5>
         <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
       </div>
-      <form v-else>
-        <button v-on:click="signUp()" class="btn btn-warning mt-2">
-          Google
-        </button>
-      </form>
+      <div v-else>
+        初めての方へ<br/>
+        <span class="webfont">TimeText</span>についての説明は
+        <router-link to="/about" class="">こちら</router-link>
+        へどうぞ
+        <form>
+          <button v-on:click="signUp()" class="btn btn-info mt-2">
+            Googleでログイン
+          </button>
+        </form>
+      </div>
     </b-modal>
   </div>
 </template>

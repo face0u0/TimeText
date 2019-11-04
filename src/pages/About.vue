@@ -4,13 +4,10 @@
       <div class="col-12 col-md-8 offset-md-2 my-5 border-bottom">
         <h1 class="mb-4 h3 text-muted d-block webfont">What is <span class="logo">TimeText</span>?</h1>
         <p class="text-center">
-          <span class="logo">TimeText</span>は板書管理サービスです。板書管理サービスと聞いて、なんだそれだけかと思うかもしれませんが、
-          興味深い機能を備えているサービスでもあり、様々な問題を解決できる可能性があります。例えば、<br/>
-          板書の写真を整理するのが面倒で困っていませんか？ <br/>
-          授業に行けなくて板書がほしいと思うことはありませんか？ <br/>
-          授業で一部、板書し忘れたなんてことはありませんか？ <br/>
-          <span class="logo">TimeText</span>ならこれらすべてを解決できます！
-          以下で<span class="logo">TimeText</span>の機能を見てみましょう！
+          突然ですが、「板書の写真を整理するのが面倒だな...」とか、
+          「授業で一部、板書し忘れた...」なんて経験ありませんか？
+          <span class="logo">TimeText</span>は自動板書管理サービスで、これらすべての悩みを解決できます！
+          是非、以下で<span class="logo">TimeText</span>の機能を見てみてください！
         </p>
       </div>
       <div class="col-12 col-md-4">
@@ -23,7 +20,7 @@
         <h1 class="mt-2 h5 text-muted d-block webfont">Share Picture</h1>
         <p class="text-center">
           自分が写真をアップロードしたときの位置情報に基づいて自動的に授業の場所を調べ、
-          他の人がその時限にその場所で取った写真を観覧できます。寝坊して授業に行けなかった！
+          他の人がその時限にその場所で取った写真を観覧できます。万が一寝坊して授業に行けなかった！
           とか板書をここの部分だけ撮り忘れた！
           となった場合でも安心です。
         </p>
@@ -39,13 +36,43 @@
       <div class="col-12 py-5 border-top mt-3">
         <h1 class="mb-4 h4 text-muted d-block webfont">Hou to Use?</h1>
         <p class="text-center">
-         まずはユーザー登録を済ませましょう！ポップアップにて名前を入力し、Createボタンを押すとユーザーを作成できます。
-          そしてPictureボタンから写真をアップできます。（基本的に授業開始時刻から休み時間の終わりまでを周期として分類します。）
-          コメントをつけることもできます。また、自分の上げた写真はホーム画面で時限を選択し、GETボタンを押すことで取得できます。
+         まずはログインしましょう！そうすると、一覧画面が出現します。
+          また、「＋」ボタンから写真をアップできます。（基本的に授業開始時刻から休み時間の終わりまでを周期として分類します。）
+          また、自分の上げた写真はホーム画面で時限を選択して取得します。
           時限選択欄の左のトグルをオンにすると他人の写真を含めて検索できます。
-          （もちろん、毎回休んでいる場合は場所を判定できないので写真を表示することはできませんが...）
+        </p>
+      </div>
+      <div class="col-12 py-5 border-top mt-3">
+        <h1 class="mb-4 h4 text-muted d-block webfont">Attention</h1>
+        <p class="text-center">
+          写真をアップする際、著作権等の問題がないことを確認してから行って下さい。
         </p>
       </div>
       </div>
-    </div>
+    <label>
+      <router-link to="/" tag="button" class="float"><span class="my-float">戻る</span></router-link>
+    </label>
+  </div>
 </template>
+
+<style>
+  .float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color: rgba(0, 129, 101, 0.78);
+    color: white;
+    border-radius:50px;
+    text-align:center;
+    z-index: 5;
+  }
+  .float:hover{
+    cursor: pointer;
+  }
+
+  .my-float{
+    margin-top:22px;
+  }
+</style>
