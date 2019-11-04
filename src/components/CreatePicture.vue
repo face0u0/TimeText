@@ -128,7 +128,18 @@ export default {
 </script>
 
 <style>
-    .float{
+  #gray {
+    position:			fixed;
+    top:				0;
+    left:				0;
+    height:				100%;
+    width:				100%;
+    background:			gray;
+    opacity:			0.9;
+    z-index:			1;
+  }
+
+  .float{
       position:fixed;
       width:60px;
       height:60px;

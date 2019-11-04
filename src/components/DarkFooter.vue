@@ -1,5 +1,5 @@
 <template>
-  <div class="section footer-classic context-dark bg-image wrapper" style="background: #2d3246;">
+  <div class="section footer-classic context-dark bg-image wrapper" style="background: #111111;">
     <div class="">
       <div class="container-fluid">
       <div class="pt-3 row text-muted">
@@ -9,9 +9,6 @@
           </div>
         </div>
         <div class="col-md-4">
-<!--          <dl class="contact-list">-->
-<!--            <dd><a href="mailto:#">dkstudioin@gmail.com</a></dd>-->
-<!--          </dl>-->
           <p class="logo">created by face9363</p>
         </div>
         <div class="col-md-4 col-xl-3 mb-1">
@@ -21,9 +18,7 @@
       </div>
     <div class="row no-gutters social-container">
       <div class="col"><a class="social-inner" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftimetext.netlify.com%2F&amp;src=sdkpreparse"><span class="icon mdi mdi-facebook"></span><span class="text-muted">Share with Facebook</span></a></div>
-<!--      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>-->
       <div class="col"><a class="social-inner" href="https://twitter.com/share?ref_src=twsrc%5Etfw"><span class="icon mdi mdi-twitter"></span><span class="text-muted">Share with twitter</span></a></div>
-<!--      <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>-->
     </div>
   </div>
   </div>
