@@ -26,21 +26,16 @@
                 </option>
               </b-form-select>
             </b-input-group>
-
-<!--            <div class="form-group checkbox-wrap mt-2">-->
-<!--              <label class="label-checkbox">-->
-<!--                <input type="checkbox" v-on:change="setChecked($event)"/>-->
-<!--                <span class="lever">Enhancement</span>-->
-<!--              </label>-->
-<!--            </div>-->
           </div>
         </div>
       </div>
     </div>
-    <h3 v-if="loading" class="webfont text-muted col-12 no-content">Loading...</h3>
-    <h3 v-else-if="!pictureList[0]" class="webfont text-muted col-12 no-content">__no content__</h3>
-    <div class="text-center" v-show="loading">
-      <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
+    <div class="mt-5">
+      <h1 v-if="loading" class="webfont text-muted col-12 no-content ">Loading...</h1>
+      <h1 v-else-if="!pictureList[0]" class="webfont text-muted col-12 no-content">no content</h1>
+      <div class="text-center" v-show="loading">
+        <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
+      </div>
     </div>
   </div>
 </template>

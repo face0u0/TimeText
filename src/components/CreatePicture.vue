@@ -145,7 +145,7 @@ export default {
       height:60px;
       bottom:40px;
       right:40px;
-      background-color: rgba(32, 216, 245, 0.6);
+      background-color: rgba(0, 129, 101, 0.78);
       color: white;
       border-radius:50px;
       text-align:center;
