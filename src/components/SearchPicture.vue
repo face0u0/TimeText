@@ -26,6 +26,13 @@
                 </option>
               </b-form-select>
             </b-input-group>
+
+<!--            <div class="form-group checkbox-wrap mt-2">-->
+<!--              <label class="label-checkbox">-->
+<!--                <input type="checkbox" v-on:change="setChecked($event)"/>-->
+<!--                <span class="lever">Enhancement</span>-->
+<!--              </label>-->
+<!--            </div>-->
           </div>
         </div>
       </div>
@@ -129,5 +136,66 @@
     background-size: cover;
     background-position: center 60%;
     /*padding-bottom:40rem;*/
+  }
+
+  .label-checkbox input[type="checkbox"]{
+    display: none;
+  }
+  .label-checkbox{
+    cursor: pointer;
+
+    position: relative;
+  }
+  .label-checkbox .lever{
+    color: #ccc;
+    font-weight: normal;
+    display: inline-block;
+    padding: 6px 40px;
+    border: 1px solid #e5e5e5;
+    border-radius:20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    -webkit-transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    -moz-transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    -o-transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    -webkit-transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    -moz-transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    -o-transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+  }
+  .label-checkbox .lever:before{
+    content:'';
+    position: absolute;
+    left: 4px;
+    top:4px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius:100%;
+    -webkit-transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    -moz-transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    -o-transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    transition: all 300ms cubic-bezier(1, 0, 0, 1);
+    -webkit-transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    -moz-transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    -o-transition-timing-function: cubic-bezier(1, 0, 0, 1);
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+  }
+  .label-checkbox:hover .lever:before{
+    border-color: #ddd;
+  }
+  .label-checkbox input[type="checkbox"]:checked + .lever{
+    background: skyblue;
+    color: #fff;
+  }
+  .label-checkbox input[type="checkbox"]:checked + .lever{
+    border-color:skyblue;
+  }
+  .label-checkbox input[type="checkbox"]:checked + .lever:before{
+    left: 100%;
+    margin-left: -44px;
+    border-color: #fff;
   }
 </style>

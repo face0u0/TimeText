@@ -8,15 +8,15 @@
       </div>
 
 <!--      <div class="my-3 offset-7 offset-sm-9 offset-md-10 offset-lg-11">-->
-        <label class="position-absolute">
-          <span class="fixed btn btn-lg btn-secondary rounded-circle pt-1 pl-2" style="width: 2.4rem; height: 2.5rem">
+        <label>
+        <span class="float">
             <input v-on:change="setFile($event)"
              id="file-small"
              accept="image/*"
              type="file"
              style="display:none"
              capture="environment"/>
-            ＋
+            <i class="fa fa-plus my-float"></i>
           </span>
         </label>
       </div>
@@ -128,21 +128,24 @@ export default {
 </script>
 
 <style>
-    #gray {
-        position:			fixed;
-        top:				0;
-        left:				0;
-        height:				100%;
-        width:				100%;
-        background:			gray;
-        opacity:			0.8;
-        z-index:			1;
+    .float{
+      position:fixed;
+      width:60px;
+      height:60px;
+      bottom:40px;
+      right:40px;
+      background-color: rgba(32, 216, 245, 0.6);
+      color: white;
+      border-radius:50px;
+      text-align:center;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 5;
+    }
+    .float:hover{
+      cursor: pointer;
     }
 
-  .fixed{
-    position: fixed;
-    bottom: 10vw;
-    right: 10vw;
-    z-index: 10;
-  }
+    .my-float{
+      margin-top:22px;
+    }
 </style>

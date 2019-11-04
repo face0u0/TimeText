@@ -1,5 +1,6 @@
 $warning: rgba(255, 255, 34, 0.5);
-$border-radius: 0;
+$border-radius: 35px;
+$card-border-radius: 0;
 $card-inner-border-radius: 0;
 $primary: #66f8ff;
 $custom-gray: #a1adb3;//#ced4da;
@@ -9,7 +10,7 @@ $gray-400: $custom-gray;
 //$gray-300: $custom-gray;
 $gray-500: $custom-gray;
 $secondary: $custom-gray;
-$box-shadow:  0 1px 1px rgba(black, .50);
+$box-shadow:  .1 .5px .5 rgba(black, .50);
 //$custom-control-indicator-active-color: $warning;
 //$custom-control-indicator-active-bg: $warning;
 //$custom-control-indicator-active-border-color: $warning;
