@@ -1,9 +1,11 @@
 <template>
     <div>
       <div id="gray" v-show="loading">
-        <h3 v-if="loading" class="webfont text-black col-12 no-content">Uploading...</h3>
-        <div class="text-center">
-          <b-spinner variant="black" label="Spinning" class="m-5"></b-spinner>
+          <div style="height: 40vh;">
+            <h3 v-if="loading" class="webfont text-black col-12 no-content">Uploading...</h3>
+            <div class="text-center">
+              <b-spinner variant="black" label="Spinning" class="m-5"></b-spinner>
+            </div>
         </div>
       </div>
 
@@ -134,7 +136,7 @@ export default {
     left:				0;
     height:				100%;
     width:				100%;
-    background:			gray;
+    background:			white;
     opacity:			0.9;
     z-index:			1;
   }

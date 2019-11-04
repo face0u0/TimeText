@@ -30,9 +30,9 @@
         </div>
       </div>
     </div>
-    <div class="mt-5">
-      <h1 v-if="loading" class="webfont text-muted col-12 no-content ">Loading...</h1>
-      <h1 v-else-if="!pictureList[0]" class="webfont text-muted col-12 no-content">no content</h1>
+    <div class="mt-5" style="color: #ccc">
+      <h1 v-if="loading" class="webfont col-12 no-content ">Loading...</h1>
+      <h1 v-else-if="!pictureList[0]" class="webfont col-12 no-content">no content</h1>
       <div class="text-center" v-show="loading">
         <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
       </div>
