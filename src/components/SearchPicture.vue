@@ -35,7 +35,7 @@
         <h1 v-if="loading" class="webfont col-12 no-content mt-5">Loading...</h1>
         <h1 v-else-if="!pictureList[0]" class="webfont col-12 no-content mt-5">no content</h1>
         <div class="text-center" v-show="loading">
-          <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
+          <b-spinner variant="secondary" label="Spinning" class="mt-5"></b-spinner>
         </div>
       </div>
     </div>

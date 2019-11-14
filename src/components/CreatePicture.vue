@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div id="gray" v-show="loading">
+      <div id="gray" v-if="loading">
           <div style="height: 40vh;">
             <h3 v-if="loading" class="webfont text-black col-12 no-content">Uploading...</h3>
             <div class="text-center">

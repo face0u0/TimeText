@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <div class="row" v-for="list in picturelist" v-bind:key="list[0].id+'list'">
-            <h4 class="offset-3 col-6 my-5 text-muted border-bottom">{{getText(list[0]["ymd"].toString())}}</h4>
+    <div class="mt-2">
+        <div class="row mb-4" v-for="list in picturelist" v-bind:key="list[0].id+'list'">
+            <h4 class="offset-3 col-6 mb-5 text-muted border-bottom">{{getText(list[0]["ymd"].toString())}}</h4>
                 <div v-bind:key="p['id']" v-for="p in list" class="col-6 col-md-4 col-lg-3 mb-3">
                     <div class="h-100" :key="p['image_url']">
                         <a :href="encode(p['image_url'])" target="_blank">
