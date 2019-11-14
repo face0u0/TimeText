@@ -31,10 +31,12 @@
       </div>
     </div>
     <div class="" style="color: #ccc">
-      <h1 v-if="loading" class="webfont col-12 no-content mt-5">Loading...</h1>
-      <h1 v-else-if="!pictureList[0]" class="webfont col-12 no-content">no content</h1>
-      <div class="text-center" v-show="loading">
-        <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
+      <div class="">
+        <h1 v-if="loading" class="webfont col-12 no-content mt-5">Loading...</h1>
+        <h1 v-else-if="!pictureList[0]" class="webfont col-12 no-content mt-5">no content</h1>
+        <div class="text-center" v-show="loading">
+          <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
+        </div>
       </div>
     </div>
   </div>
@@ -109,7 +111,7 @@
           )
           .then(
             function (response) {
-              this.pictureList = response.data.reverse();
+              this.pictureList = response.data;
               this.$emit('picturelist', this.pictureList);
               console.log(this.pictureList)
             }.bind(this)

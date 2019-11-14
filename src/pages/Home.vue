@@ -50,11 +50,15 @@ export default {
   },
     computed: {
       orderdList: function () {
+          const list = this.picturelistbysearch;
+          list.sort(function (a,b) {
+              return (a.date > b.date ? 1 : -1)
+          });
           var prev=0;
           var index=-1;
           const newList = [];
-          for (let i=0; i<this.picturelistbysearch.length; i++){
-              const p = this.picturelistbysearch[i];
+          for (let i=0; i<list.length; i++){
+              const p = list[i];
               if(prev !== p['ymd']) {
                   index++;
                   newList.push([]);
