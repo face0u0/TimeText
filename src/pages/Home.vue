@@ -50,10 +50,11 @@ export default {
   },
     computed: {
       orderdList: function () {
-          const list = this.picturelistbysearch;
+          var list = this.picturelistbysearch;
           list.sort(function (a,b) {
-              return (a.date > b.date ? 1 : -1)
+              return (a['created_at'] < b['created_at'] ? 1 : -1)
           });
+          console.log(list)
           var prev=0;
           var index=-1;
           const newList = [];
