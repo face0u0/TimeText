@@ -11,7 +11,7 @@
         v-bind:username="username"
         v-on:search="search($event)"
       ></create-picture>
-      <picture-list v-bind:picturelist="picturelistbysearch"></picture-list>
+      <picture-list v-bind:picturelist="orderdList"></picture-list>
     </div>
   </div>
 
@@ -48,6 +48,23 @@ export default {
       }
     }
   },
+    computed: {
+      orderdList: function () {
+          var prev=0;
+          var index=-1;
+          const newList = [];
+          for (let i=0; i<this.picturelistbysearch.length; i++){
+              const p = this.picturelistbysearch[i];
+              if(prev !== p['ymd']) {
+                  index++;
+                  newList.push([]);
+                  prev = p['ymd'];
+              }
+              newList[index].push(p);
+          }
+          return newList
+      }
+    }
 }
 // d45fcc7ee858cf5
 </script>

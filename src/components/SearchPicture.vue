@@ -30,8 +30,8 @@
         </div>
       </div>
     </div>
-    <div class="mt-5" style="color: #ccc">
-      <h1 v-if="loading" class="webfont col-12 no-content ">Loading...</h1>
+    <div class="" style="color: #ccc">
+      <h1 v-if="loading" class="webfont col-12 no-content mt-5">Loading...</h1>
       <h1 v-else-if="!pictureList[0]" class="webfont col-12 no-content">no content</h1>
       <div class="text-center" v-show="loading">
         <b-spinner variant="secondary" label="Spinning" class="m-5"></b-spinner>
@@ -109,8 +109,8 @@
           )
           .then(
             function (response) {
-              this.pictureList = response.data.reverse()
-              this.$emit('picturelist', this.pictureList)
+              this.pictureList = response.data.reverse();
+              this.$emit('picturelist', this.pictureList);
               console.log(this.pictureList)
             }.bind(this)
           )
@@ -131,5 +131,6 @@
     background-size: cover;
     background-position: center 60%;
     /*padding-bottom:40rem;*/
+    margin-bottom: 0;
   }
 </style>
