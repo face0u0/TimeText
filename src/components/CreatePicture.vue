@@ -151,7 +151,7 @@ export default {
       color: white;
       border-radius:50px;
       text-align:center;
-      box-shadow: 2px 2px 3px #999;
+      box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
       z-index: 5;
     }
     .float:hover{

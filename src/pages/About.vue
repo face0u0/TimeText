@@ -64,8 +64,10 @@
     right:40px;
     background-color: rgba(0, 129, 101, 0.78);
     color: white;
+    border: 0;
     border-radius:50px;
     text-align:center;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
     z-index: 5;
   }
   .float:hover{
