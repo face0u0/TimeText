@@ -1,6 +1,7 @@
-# util-project
+# TimeText
 
 > A Vue.js project
+TimeTextは位置情報を用いた板書管理兼共有サービスです。
 
 ## Build Setup
 
