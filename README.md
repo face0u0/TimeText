@@ -1,31 +1,19 @@
 # TimeText
 
-> A Vue.js project
 TimeTextは位置情報を用いた板書管理兼共有サービスです。
 
-## Build Setup
+## 機能
+- 黒板、ノートの写真を投稿
+- 投稿された時刻に基づき、写真を整理
+- 投稿された写真の位置情報から同じ授業を受けている人を推定し、自動で共有
 
-``` bash
-# install dependencies
-npm install
+## 環境
+### フロント
+- vue/vue-router
+- netlify
+- imgur(画像ストレージ)
+- firebase authentication
+### バックエンド
+- rails
+- heroku
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
