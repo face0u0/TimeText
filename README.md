@@ -1,3 +1,5 @@
+<!--- <script src="https://rawcdn.githack.com/oscarmorrison/md-page/master/md-page.js"></script><noscript>) --->
+
 # TimeText
 
 TimeTextは位置情報を用いた板書管理兼共有サービスです。
